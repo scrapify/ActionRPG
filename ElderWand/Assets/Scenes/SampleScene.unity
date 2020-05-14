@@ -752,8 +752,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534062260}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
+  m_Controller: {fileID: 9100000, guid: db6dc60caf0c19f43b784eb65e32dfee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1230,17 +1230,17 @@ PrefabInstance:
     - target: {fileID: 1730554004211045130, guid: ad6e4e982f7b9af42a3290831d8980f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1730554004211045130, guid: ad6e4e982f7b9af42a3290831d8980f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1730554004211045130, guid: ad6e4e982f7b9af42a3290831d8980f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1730554004211045130, guid: ad6e4e982f7b9af42a3290831d8980f4,
         type: 3}
@@ -1287,6 +1287,21 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1534062264}
+    - target: {fileID: 1730554004580107254, guid: ad6e4e982f7b9af42a3290831d8980f4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730554004580107254, guid: ad6e4e982f7b9af42a3290831d8980f4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730554004580107254, guid: ad6e4e982f7b9af42a3290831d8980f4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6e4e982f7b9af42a3290831d8980f4, type: 3}
 --- !u!1001 &4233128126585255265
@@ -1360,6 +1375,21 @@ PrefabInstance:
         type: 3}
       propertyPath: targetObject
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233128125929348056, guid: 7680c26ed56946f4e96227dc6c635a8c,
+        type: 3}
+      propertyPath: m_Speed
+      value: 5.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233128125929348056, guid: 7680c26ed56946f4e96227dc6c635a8c,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233128125929348056, guid: 7680c26ed56946f4e96227dc6c635a8c,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7680c26ed56946f4e96227dc6c635a8c, type: 3}

@@ -25,17 +25,15 @@ public class Mover : MonoBehaviour
 
         //Get Mousedown
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             //Use Camera screen point to ray to case the ray
             lastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             MoveCursor();
 
         }
-        //use drawray to display the ray
-        // Debug.DrawRay(lastRay.origin, lastRay.direction * 100);
 
-
+        UpdateAnimator();
 
 
 
@@ -52,5 +50,14 @@ public class Mover : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().destination = hit.point;
         }
+    }
+
+    public void UpdateAnimator()
+    {
+        Vector3 Velocity = GetComponent<NavMeshAgent>().velocity;
+        Vector3 localVelocity = transform.InverseTransformDirection(Velocity);
+        float Speed = localVelocity.z;
+        GetComponent<Animator>().SetFloat("forwardSpeed", Speed);
+        
     }
 }
