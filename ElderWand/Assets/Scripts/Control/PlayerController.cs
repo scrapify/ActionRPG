@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
+using RPG.Combat;
+using System;
+
 namespace RPG.Control{
 
     public class PlayerController : MonoBehaviour
@@ -15,23 +18,52 @@ namespace RPG.Control{
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetMouseButton(0))
+            InteractWithMovement();
+            InteractWithCombat();
+
+        }
+
+        private void InteractWithCombat()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            foreach (var hit in hits)
             {
-                MoveCursor();
+                CombatTarget combatTarget = hit.transform.GetComponent<CombatTarget>();
+                if(combatTarget!=null)
+                {
+                    if(Input.GetMouseButtonDown(0))
+                    {
+                        GetComponent<fighter>().Attack(combatTarget);
+
+                    }
+                    
+                }
+
             }
 
         }
 
+        private void InteractWithMovement()
+        {
+            if (Input.GetMouseButton(0))
+            {
+                MoveCursor();
+            }
+        }
 
         public void MoveCursor()
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            bool isHit = Physics.Raycast(ray, out hit);
+            bool isHit = Physics.Raycast(GetMouseRay(), out hit);
             if (isHit)
             {
                 GetComponent<Mover>().MoveTo(hit.point);
             }
+        }
+
+        private static Ray GetMouseRay()
+        {
+            return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
     }
 
